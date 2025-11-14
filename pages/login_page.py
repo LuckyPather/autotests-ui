@@ -13,7 +13,7 @@ class LoginPage(BasePage):
         self.wrong_email_or_password_alert = page.get_by_test_id('login-page-wrong-email-or-password-alert')
 
     # {action}_{context}_{element_type}
-    def fill_login_form(self, email, password):
+    def fill_login_form(self, email: str, password: str):
         self.email_field.fill(email)
         self.password_field.fill(password)
         expect(self.email_field).to_have_value(email)
